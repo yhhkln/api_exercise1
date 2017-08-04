@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 	namespace :api, :defaults => { :format => :json } do
-		namespace :vi do
+		namespace :v1 do
 			get "/trains" => "trains#index", :as => :trains
 			get "/trains/:train_number" => "trains#show", :as => :train
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 			delete "/reservations/:booking_code" => "reservations#destroy", :as => :cancel_reservation
 		end
 	end
-	
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	resources :cities do
 		member do
