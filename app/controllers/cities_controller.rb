@@ -8,7 +8,7 @@ class CitiesController < ApplicationController
 		city = City.find(params[:id])
 
 		response = RestClient.get "http://v.juhe.cn/weather/index",
-															:params => { :cityname => city.juhe_id, :key =>"JHHE_CONFIG["api_key"]"}
+															:params => { :cityname => city.juhe_id, :key =>JHHE_CONFIG["api_key"]}
 
 		data = JSON.parse(response.body)
 
