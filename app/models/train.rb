@@ -17,5 +17,6 @@ class Train < ApplicationRecord
 		#所有 SEATS 扣掉已经订位的资料
 		return SEATS - self.reservations.pluck(:seat_number)
 	end
+	mount_uploader :train_logo, TrainLogoUploader
 
 end
